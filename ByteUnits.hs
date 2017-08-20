@@ -2,7 +2,7 @@ module ByteUnits where
 
 import Safe
 
-data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes | TeraBytes | PetaBytes | ExaBytes deriving Show
+data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes | TeraBytes | PetaBytes | ExaBytes deriving (Show, Eq)
 
 getUnits :: ByteUnit -> Float -> Float
 getUnits bytesUnit bytes = case bytesUnit of
