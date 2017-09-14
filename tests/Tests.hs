@@ -1,7 +1,7 @@
 module Main where
 
 import Test.QuickCheck (quickCheck)
-import ByteUnits
+import Data.ByteUnits
 
 main = do
   quickCheck (getUnits KiloBytes 1024 == 1.0)

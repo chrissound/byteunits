@@ -1,4 +1,4 @@
-module ByteUnits where
+module Data.ByteUnits where
 
 import Safe
 

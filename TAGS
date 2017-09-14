@@ -1,7 +1,18 @@
 
-./Tests.hs,37
-module Main Main0,1
-main main4,5
+./Data.ByteUnits.hs,715
+module Data.ByteUnits Data.ByteUnits0,1
+data ByteUnit ByteUnit4,5
+data ByteUnit = Bytes Bytes4,5
+data ByteUnit = Bytes | KiloBytes KiloBytes4,5
+data ByteUnit = Bytes | KiloBytes | MegaBytes MegaBytes4,5
+data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes GigaBytes4,5
+data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes | TeraBytes TeraBytes4,5
+data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes | TeraBytes | PetaBytes PetaBytes4,5
+data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes | TeraBytes | PetaBytes | ExaBytes ExaBytes4,5
+getUnits getUnits6,7
+getUnits getUnits7,8
+getAppropriateUnits getAppropriateUnits23,24
+getAppropriateUnits getAppropriateUnits24,25
 
 ./ByteUnits.hs,705
 module ByteUnits ByteUnits0,1
@@ -20,3 +31,7 @@ getAppropriateUnits getAppropriateUnits24,25
 
 ./Setup.hs,15
 main main1,2
+
+./tests/Tests.hs,37
+module Main Main0,1
+main main5,6
