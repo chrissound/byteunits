@@ -31,3 +31,4 @@ Test-Suite testing-example
                  , Cabal
                  , QuickCheck
                  , byteunits
+                 , HUnit
