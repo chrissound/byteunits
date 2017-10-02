@@ -1,5 +1,5 @@
 name:                byteunits
-version:             0.2.0.2
+version:             0.3.0.1
 description:         Human friendly conversion between byte units (KB, MB, GB...)...
 synopsis:            Human friendly conversion between byte units (KB, MB, GB...)
 license:             BSD3
