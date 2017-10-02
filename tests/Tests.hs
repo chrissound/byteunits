@@ -16,6 +16,7 @@ hUnitTests = test [
   , "" ~: "" ~: getAppropriateUnits (ByteValue 125 Bytes) /= ByteValue 3.0 MegaBytes ~=? True
   , "" ~: "" ~: getBytes (ByteValue 3 KiloBytes) ~=? (3 * 1024)
   , "" ~: "" ~: convertByteUnit (ByteValue (1024 * 1024) KiloBytes) MegaBytes ~=? ByteValue 1024 MegaBytes
+  , "" ~: "" ~: getShortHand (ByteValue 1024 MegaBytes) ~=? "1024.00 MB"
   ]
 
 main = do
