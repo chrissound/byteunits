@@ -1,11 +1,31 @@
+-- | Here is a quick example:
+--
+--  > ByteValue (1024 * 1024 * 3)
+--  > -- the above will evaluate to: ByteValue 3145728.0 Bytes
+--
+--  > getShortHand . getAppropriateUnits $ ByteValue (1024 * 1024 * 3) Bytes
+--  > -- the above will evaluate to: "3.00 MB"
+
 module Data.ByteUnits where
 
-import Safe
+import Safe (lastMay)
 import Numeric
+
 
 data ByteUnit = Bytes | KiloBytes | MegaBytes | GigaBytes | TeraBytes | PetaBytes | ExaBytes deriving (Show, Eq)
 
 data ByteValue = ByteValue Float ByteUnit deriving (Show, Eq)
+
+
+-- | Also allows comparing sizes, but because it uses float - it might not be 100% accurate
+--
+-- >>> ByteValue 1024 MegaBytes == ByteValue 1 GigaBytes
+-- False
+--
+-- >>> ByteValue 1023 MegaBytes < ByteValue 1 GigaBytes
+-- True
+instance Ord ByteValue where
+  compare a b = compare (getBytes a) (getBytes b)
 
 -- | Gets the value of bytes from a ByteValue type
 --
@@ -21,6 +41,8 @@ getBytes (ByteValue v bu) = case bu of
 
 -- | Converts the ByteValue to an ByteValue with the specified ByteUnit
 --
+-- >>> convertByteUnit (ByteValue 500 GigaBytes) MegaBytes
+-- ByteValue 512000.0 MegaBytes
 convertByteUnit :: ByteValue -> ByteUnit -> ByteValue
 convertByteUnit bv bu = case bu of
   Bytes -> ByteValue bytes Bytes
@@ -49,6 +71,10 @@ getAppropriateUnits bv = do
     Just (bv') -> bv'
     Nothing -> bv
 
+-- | Converts to a short string representation 
+--
+-- >>> getShortHand $ ByteValue 100 MegaBytes
+-- "100.00 MB"
 getShortHand :: ByteValue -> String
 getShortHand (ByteValue v bu) = (showFFloat (Just 2) v) (" " ++buShort) where
   buShort = case bu of
