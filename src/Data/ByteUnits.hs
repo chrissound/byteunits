@@ -1,6 +1,6 @@
 -- | Here is a quick example:
 --
---  > ByteValue (1024 * 1024 * 3)
+--  > ByteValue (1024 * 1024 * 3) Bytes
 --  > -- the above will evaluate to: ByteValue 3145728.0 Bytes
 --
 --  > getShortHand . getAppropriateUnits $ ByteValue (1024 * 1024 * 3) Bytes
