@@ -1,0 +1,28 @@
+name: byteunits
+version: '0.4.0.2'
+synopsis: Human friendly conversion between byte units (KB, MB, GB...)
+description: Human friendly conversion between byte units (KB, MB, GB...)...
+category: Library
+author: chrissound (Chris Stryczynski)
+maintainer: chrissound (Chris Stryczynski)
+license: BSD3
+github: chrissound/byteunits
+extra-source-files:
+- ChangeLog.md
+library:
+  source-dirs: src
+  exposed-modules:
+  - Data.ByteUnits
+  dependencies:
+  - base >=4.5 && <5
+  - safe
+tests:
+  testing-example:
+    main: Tests.hs
+    source-dirs: tests
+    dependencies:
+    - base
+    - Cabal
+    - QuickCheck
+    - byteunits
+    - HUnit
