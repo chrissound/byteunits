@@ -36,8 +36,8 @@ getBytes (ByteValue v bu) = case bu of
   MegaBytes -> v * (1024 ** 2)
   GigaBytes -> v * (1024 ** 3)
   TeraBytes -> v * (1024 ** 4)
-  PetaBytes -> v * (1024 ** 4)
-  ExaBytes  -> v * (1024 ** 5)
+  PetaBytes -> v * (1024 ** 5)
+  ExaBytes  -> v * (1024 ** 6)
 
 -- | Converts the ByteValue to an ByteValue with the specified ByteUnit
 --
@@ -50,8 +50,8 @@ convertByteUnit bv bu = case bu of
   MegaBytes -> ByteValue (bytes / (1024 ** 2)) MegaBytes
   GigaBytes -> ByteValue (bytes / (1024 ** 3)) GigaBytes
   TeraBytes -> ByteValue (bytes / (1024 ** 4)) TeraBytes
-  PetaBytes -> ByteValue (bytes / (1024 ** 4)) PetaBytes
-  ExaBytes  -> ByteValue (bytes / (1024 ** 5)) ExaBytes
+  PetaBytes -> ByteValue (bytes / (1024 ** 5)) PetaBytes
+  ExaBytes  -> ByteValue (bytes / (1024 ** 6)) ExaBytes
   where bytes = getBytes bv
 
 -- | Converts to the largest unit size provided the float value is > 1
